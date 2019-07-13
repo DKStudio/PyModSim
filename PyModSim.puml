@@ -1,0 +1,12 @@
+@startuml LAYOUT_WITH_LEGEND Sample
+!includeurl .\C4-PlantUML\C4_Container.puml
+
+LAYOUT_WITH_LEGEND()
+
+Person(admin, "App Testers")
+System(PyModSim, "PyModSim")
+
+Rel(admin,PyModSim,"User","Computer")
+
+
+@enduml
