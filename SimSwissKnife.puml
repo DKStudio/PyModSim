@@ -1,0 +1,21 @@
+@startuml SimSwissKnife
+'!define NetInclude
+!includeurl .\C4-PlantUML\C4_Container.puml
+
+LAYOUT_TOP_DOWN()
+LAYOUT_WITH_LEGEND()
+
+Person(admin, "SCADA Testers")
+
+System_Boundary(C1, "SCADA Environment simulation"){
+System(SimSwissKnife, "SimSwissKnife")
+
+}
+
+
+System_Ext(SCADA_Porject, "SCADA Project")
+Rel_L(SCADA_Porject,SimSwissKnife,"ModbusRTU/ModbusTCP/ODBC","RS485/Network")
+Rel(admin,SimSwissKnife,"User","Computer")
+Rel(admin,SCADA_Porject,"User","Computer")
+
+@enduml
