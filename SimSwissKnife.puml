@@ -8,7 +8,7 @@ LAYOUT_WITH_LEGEND()
 Person(admin, "SCADA Testers")
 
 System_Boundary(C1, "SCADA Environment simulation"){
-System(SimSwissKnife, "SimSwissKnife")
+    System(SimSwissKnife, "SimSwissKnife")
 
 }
 
