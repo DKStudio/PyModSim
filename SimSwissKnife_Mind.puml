@@ -1,10 +1,9 @@
-@startmindmap PyModSIM
-* PyModSIM
+@startmindmap SimSwissKnife
+* SimSwissKnife
 ** Python
 *** Modbus-TK
 *** MSSQL
 *** PySide2(QT GUI)
-*** MSSQL
 *** Thread
 *** JSON
 @endmindmap

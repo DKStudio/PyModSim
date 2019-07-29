@@ -1,0 +1,22 @@
+@startuml SimSwissKnife Container
+'!define NetInclude
+!includeurl .\C4-PlantUML\C4_Container.puml
+LAYOUT_TOP_DOWN()
+LAYOUT_WITH_LEGEND()
+
+Person(admin, "SCADA Testers")
+System_Ext(SCADA_Porject, "SCADA Project")
+System_Boundary(C1, "SimSwissKnife Application"){
+    Container(PyModSim, "PyModSim", "Python")
+    Container(PyDataBaseSim, "PyDataBaseSim", "Python")
+}
+
+
+Rel(admin,SCADA_Porject,"User","Computer")
+Rel(admin,PyDataBaseSim,"User","Computer")
+
+Rel_L(SCADA_Porject,PyModSim,"ModbusRTU or ModbusTCP","rs485 or network")
+Rel(SCADA_Porject,PyDataBaseSim,"ODBC","Network")
+Rel_D(admin,PyModSim,"User","Computer")
+Lay_D(PyDataBaseSim,PyModSim)
+@enduml
