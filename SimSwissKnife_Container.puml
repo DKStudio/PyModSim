@@ -9,14 +9,17 @@ System_Ext(SCADA_Porject, "SCADA Project")
 System_Boundary(C1, "SimSwissKnife Application"){
     Container(PyModSim, "PyModSim", "Python")
     Container(PyDataBaseSim, "PyDataBaseSim", "Python")
+    
 }
-
+SystemDb_Ext(DataBase,"DataBase","MSSQL")
 
 Rel(admin,SCADA_Porject,"User","Computer")
-Rel(admin,PyDataBaseSim,"User","Computer")
 
-Rel_L(SCADA_Porject,PyModSim,"ModbusRTU or ModbusTCP","rs485 or network")
-Rel(SCADA_Porject,PyDataBaseSim,"ODBC","Network")
-Rel_D(admin,PyModSim,"User","Computer")
-Lay_D(PyDataBaseSim,PyModSim)
+
+Rel(SCADA_Porject,PyModSim,"ModbusRTU or ModbusTCP","rs485 or network")
+Rel_D(SCADA_Porject,DataBase,"ODBC","Network")
+Rel_L(PyDataBaseSim,DataBase,"PySQL","Network")
+Rel(admin,PyDataBaseSim,"User","Computer")
+Rel(admin,PyModSim,"User","Computer")
+Lay_D(PyModSim,PyDataBaseSim)
 @enduml

@@ -9,12 +9,13 @@ Person(admin, "SCADA Testers")
 
 
 System(SimSwissKnife, "SimSwissKnife Application")
-
+SystemDb_Ext(DataBase,"DataBase","MSSQL")
 
 
 System_Ext(SCADA_Porject, "SCADA Project")
-Rel_L(SCADA_Porject,SimSwissKnife,"ModbusRTU/ModbusTCP/ODBC","RS485/Network")
+Rel_R(SCADA_Porject,SimSwissKnife,"ModbusRTU/ModbusTCP","RS485/Network")
 Rel(admin,SimSwissKnife,"User","Computer")
 Rel(admin,SCADA_Porject,"User","Computer")
-
+Rel_D(SCADA_Porject,DataBase,"ODBC","Network")
+Rel(SimSwissKnife,DataBase,"PySQL","Network")
 @enduml
