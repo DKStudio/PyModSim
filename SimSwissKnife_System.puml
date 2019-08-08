@@ -1,6 +1,6 @@
 @startuml SimSwissKnife
 '!define NetInclude
-!includeurl .\C4-PlantUML\C4_Container.puml
+!includeurl .\C4-PlantUML\C4_Context.puml
 
 LAYOUT_TOP_DOWN()
 LAYOUT_WITH_LEGEND()

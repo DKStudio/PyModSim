@@ -1,0 +1,9 @@
+@startuml SimSwissKnife Component
+'!define NetInclude
+!includeurl .\C4-PlantUML\C4_Component.puml
+
+LAYOUT_TOP_DOWN()
+LAYOUT_WITH_LEGEND()
+
+
+@enduml
